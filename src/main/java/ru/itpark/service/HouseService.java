@@ -26,7 +26,7 @@ public class HouseService {
     public List<House> searchByArea (String area){
         List<House> result = new ArrayList<>();
         for (House house : houseList) {
-            if (house.getAreaName() == area) {
+            if (house.getAreaName().equals(area)) {
                 result.add(house);
             }
         }
@@ -36,7 +36,7 @@ public class HouseService {
     public List<House> searchByBothData(int min, int max, String area){
         List<House> result = new ArrayList<>();
         for (House house : houseList) {
-            if (house.getPrice() >= min && house.getPrice() <= max && house.getAreaName() == area){
+            if (house.getPrice() >= min && house.getPrice() <= max && house.getAreaName().equals(area)){
                     result.add(house);
             }
         }
